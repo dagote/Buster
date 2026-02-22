@@ -1,18 +1,21 @@
 # Buster Protocol
 
-A **trustless, verifiable gaming protocol** using Drand public randomness.
+A **trustless, open-source protocol framework** for transparent games using Drand public randomness.
 
-## Overview
+## What is This?
 
-Buster enables fair, transparent games where:
-- **No server** can manipulate outcomes
-- **Anyone** can verify results
-- Randomness comes from **League of Entropy** (Drand)
-- Outcomes are **deterministic & auditable**
+Buster is a **protocol layer** that anyone can build on:
+
+- **No vendor lock-in** - Deploy your own contracts and server
+- **Verifiable outcomes** - Players can prove fairness independently  
+- **Open & forkable** - Modify the contracts for your game
+- **Protocol-first** - Contract is the source of truth, not a service
+
+**You** provide the game operator wallet and collect the fees. The protocol just ensures it's fair.
 
 ## Quick Start
 
-### 1. Play the Interactive Demo
+### 1. Play the Interactive Demo (30 seconds)
 
 ```bash
 cd demo
@@ -21,39 +24,36 @@ python game.py
 
 Pick a number 1-6 and let the Drand randomness determine if you win!
 
-### 2. See Auto-Verification in Action
+### 2. See Full Quickstart
 
-```bash
-python demo_auto_verify.py
-```
+**New to Buster?** Read [docs/QUICKSTART.md](docs/QUICKSTART.md) for detailed setup.
 
-Shows the complete protocol flow with automatic verification.
+**API Reference?** Check [docs/API_FUNCTIONS.md](docs/API_FUNCTIONS.md) for all functions.
 
-### 3. Understand the Protocol
+### 3. Learn More
 
-Read the documentation:
-- [Buster Demo Guide](demo/README.md) - Interactive game walkthrough
 - [Project Status](docs/PROJECT_STATUS.md) - Current phase and progress
-- [Phase 4: Drand Integration](docs/PHASE_4_DRAND_COMPLETE.md) - Technical details
+- [Drand Integration](docs/PHASE_4_DRAND_COMPLETE.md) - Technical deep dive
+- [How the Math Works](docs/DETERMINISTIC_MATH.md) - Understand fairness
 
 ## Setup
 
-1. **Configure environment:**
-   ```powershell
+1. **Clone and configure:**
+   ```bash
+   git clone <repo-url>
+   cd buster
    copy .env.template .env
-   # Edit .env with your RPC URLs and keys
-   # (never commit the real .env file)
    ```
 
-2. **Install contract dependencies:**
+2. **Install dependencies** (contract only; demo uses stdlib):
    ```bash
-   cd contract
-   npm install
+   cd contract && npm install
    ```
 
 3. **Run tests:**
    ```bash
-   npm test
+   cd contract && npm test    # Smart contracts (17 tests)
+   cd ../demo && python test_game.py  # Demo (3 test suites)
    ```
 
 ## Current Status (Phase 4)
@@ -74,26 +74,6 @@ Read the documentation:
 - Real round 17598 data integrated
 - Verifiable at https://drand.love/
 
-## Project Structure
-
-```
-bitcino/
-├── contract/          # Solidity smart contracts (Polygon)
-│   ├── contracts/     # DrandGame.sol, SeedCommit.sol
-│   ├── test/          # Hardhat tests (17 passing)
-│   └── scripts/       # Deployment & demo scripts
-├── demo/              # Interactive Python demo
-│   ├── game.py        # Main interactive game
-│   ├── verify.py      # Verification system
-│   ├── analyze_fairness.py  # Prove uniform distribution
-│   └── *.md           # Complete documentation
-├── docs/              # Technical documentation
-│   ├── PROJECT_STATUS.md    # Current status
-│   ├── PHASE_4_DRAND_COMPLETE.md  # Phase 4 details
-│   └── CONTRACT_ADDRESS.md  # Deployed contracts
-├── protocol/          # Core seed generation library
-│   └── seed.py        # Pure Python, no dependencies
-└── legacy/            # Previous implementation (archived)
 ```
 
 ## How It Works
@@ -138,17 +118,6 @@ Phase 3 contract - anchors game parameters on-chain.
 ```
 0x0f4e83625223833460cF1f0f87fc4584CE5fECBa
 ```
-
-## Demo Scripts
-
-| Script | Purpose | Run |
-|--------|---------|-----|
-| `game.py` | Interactive guessing game | `python game.py` |
-| `demo_auto_verify.py` | Shows verification (no input) | `python demo_auto_verify.py` |
-| `test_game.py` | Automated tests | `python test_game.py` |
-| `demo_real_drand.py` | Real Drand demonstrations | `python demo_real_drand.py` |
-| `verify.py` | Verification tool | `python verify.py` |
-| `analyze_fairness.py` | Prove uniform distribution | `python analyze_fairness.py` |
 
 ## Verification
 
@@ -229,7 +198,7 @@ A: Yes. Run `analyze_fairness.py` to see 10,000+ trials showing uniform distribu
 A: No. Outcomes depend on Drand (threshold cryptography) and are immutable on-chain.
 
 **Q: How much does it cost to play?**
-A: Only gas fees. On Polygon, very cheap (cents, not dollars).
+A: Only gas fees on Polygon. You'll need a wallet with a small amount of POL (~$0.01-0.10 per transaction). Very cheap, but you need to fund your own wallet.
 
 **Q: Can I use this in production?**
 A: The contracts are auditable, tested, and live. You can deploy and use them.

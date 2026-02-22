@@ -1,102 +1,65 @@
-# Bitcino Protocol Demo - Quick Start
+# Quick Start - 30 Seconds
 
-**Get started in 30 seconds:**
+## Play the Game
 
 ```bash
 cd demo
 python game.py
 ```
 
-Pick a number 1-6 and play! 🎲
+Pick a number 1-6. Drand randomness determines if you win! 🎲
 
 ---
 
-## What You'll Experience
+## What Happens
 
-1. **Pick a number** (1-6)
-2. **Lock in your guess** (commitment)
-3. **Reveal Drand randomness** (public, verifiable)
-4. **Calculate outcome** (deterministic formula)
-5. **Win or lose** (based on pure math)
-
-That's the entire Bitcino Protocol in one interactive game.
-
-**New:** Outcomes are automatically verified using real Drand data!
+1. **You pick** 1-6
+2. **Drand randomness** reveals  
+3. **Formula calculates** outcome
+4. **You win or lose** (provably fair)
+5. **Anyone can verify** the result
 
 ---
 
-## Three Ways to Run
+## Run Tests
 
-### 1. Play Interactive Game
 ```bash
-python game.py
+python test_game.py           # Test all logic
+python test_real_drand.py     # Verify with real Drand
+python analyze_fairness.py    # Prove fairness (10k+ trials)
 ```
-- Interactive gameplay
-- Full 5-phase walkthrough
-- Audit trail provided
-- Play multiple rounds
-
-### 2. Run Automated Test
-```bash
-python test_game.py
-```
-- Automatic game flow (no input needed)
-- Verify all logic works
-- Shows outcomes for various ranges
-- Takes ~1 second
-
-### 3. See Auto-Verification Demo
-```bash
-python demo_auto_verify.py
-```
-- Shows auto-verification in action
-- Complete 5-phase game flow
-- Verification against real Drand
-- No user input required
-- Takes ~1 second
-
-### 4. Analyze Fairness
-```bash
-python analyze_fairness.py
-```
-- Run 10,000+ simulations
-- Show outcome distribution
-- Prove uniform fairness
-- Verify determinism
-- Takes ~5 seconds
 
 ---
 
-## Next Steps
+## Learn More
 
-1. **Understand the Protocol**
-   - Read: `README.md`
-   - Deep dive: `../docs/PHASE_4_DRAND_COMPLETE.md`
-
-2. **Try Different Ranges**
-   - Edit `game.py` line 226: change `1, 6` to any range
-   - Two dice: `2, 12`
-   - Percentiles: `1, 100`
-   - Coin flip: `0, 1`
-
-3. **Verify Drand Randomness**
-   - Official site: https://drand.love/
-   - API reference: https://docs.drand.love/developer/http-api/
-   - Fetch round data: https://api.drand.sh/public/{round_number}
-   - See how randomness becomes game outcome
-
-4. **Connect to Smart Contract**
-   - Contract address: `0x48F50771Ddf0c9cab51f7E5759Eb10008B2B0D43`
-   - Verify on: https://polygonscan.com/address/0x48F50771Ddf0c9cab51f7E5759Eb10008B2B0D43
-   - Learn web3 integration in `../docs/`
-
-5. **Deploy Your Own**
-   - Copy contract address
-   - Use in your app
-   - Fork and modify
-   - Build your platform
+- **How it works?** → [docs/PHASE_4_DRAND_COMPLETE.md](PHASE_4_DRAND_COMPLETE.md)
+- **API Reference?** → [docs/API_FUNCTIONS.md](API_FUNCTIONS.md)
+- **View contracts?** → [docs/CONTRACT_ADDRESS.md](CONTRACT_ADDRESS.md)
+- **Status?** → [docs/PROJECT_STATUS.md](PROJECT_STATUS.md)
 
 ---
+
+## Next: Setup
+
+If you want to deploy or interact with the contract:
+
+```bash
+# 1. Configure environment
+copy .env.template .env
+
+# 2. Edit .env
+# WALLET_ADDRESS=0x...
+# POLYGON_RPC_URL=https://polygon-rpc.com/
+
+# 3. Run smart contract tests
+cd contract && npm install && npm test
+```
+
+---
+
+Done! You're now running Buster Protocol. 🎉
+
 
 ## File Guide
 

@@ -1,105 +1,63 @@
-# Demo Folder - Complete Reference
+# 🚀 Start Here
 
-This folder contains **interactive demonstrations** of the Buster Protocol.
+**Just want to try it?** Run this:
 
-## Overview
-
-The **demo** is a playable implementation of the full protocol:
-
-✅ You pick a number (1-6)  
-✅ Lock it on-chain  
-✅ Get public Drand randomness  
-✅ Calculate deterministic outcome  
-✅ Verify the result  
-✅ See if you won  
-
-All in pure Python, no server required.
-
----
-
-## Files & Their Purpose
-
-### 🎮 Interactive Game
-
-**`game.py`** - Main interactive game
-- Ask user to pick 1-6
-- Lock in the guess
-- Fetch Drand randomness
-- Calculate outcome
-- Show winner
-- Offer audit trail
-
-**Run:**
 ```bash
-python game.py
+cd demo && python game.py
 ```
 
-**What you get:**
-- 5-phase walkthrough
-- Learning experience
-- Links to verify on-chain
-- Multiple round support
+Pick a number 1-6 and see if you win! 🎲
 
 ---
 
-### ✅ Automated Tests
+## Pick Your Path
 
-**`test_game.py`** - Test suite (non-interactive)
-- Run complete game flow automatically
-- Verify all functions work
-- Test multiple outcome ranges
-- Show test results
+### 👀 I want a quick overview (5 min)
+→ Read [QUICKSTART.md](QUICKSTART.md)
 
-**Run:**
+### 🔧 I'm a developer (who wants API docs)
+→ Check [API_FUNCTIONS.md](API_FUNCTIONS.md)
+
+### 📊 I want details on the current status
+→ See [PROJECT_STATUS.md](PROJECT_STATUS.md)
+
+### 🤔 I want to understand the math
+→ Dive into [DETERMINISTIC_MATH.md](DETERMINISTIC_MATH.md)
+
+### 🛠️ I want to deploy my own game
+→ Look at [CONTRACT_ADDRESS.md](CONTRACT_ADDRESS.md)
+
+### 📈 I want the technical deep-dive
+→ Read [PHASE_4_DRAND_COMPLETE.md](PHASE_4_DRAND_COMPLETE.md)
+
+---
+
+## What is Buster?
+
+Buster is an **open-source protocol framework** for trustless games using Drand randomness.
+
+Anyone can:
+- ✅ Play with the reference contracts
+- ✅ Deploy their own instance (and collect fees)
+- ✅ Fork and customize for their game
+- ✅ Build a game server on top
+
+---
+
+## TL;DR
+
+- **Trustless:** Outcomes decided by Drand (public randomness), contract enforces fairness
+- **Verifiable:** Anyone can check results on https://drand.love/
+- **Fair:** Formula deterministic + proven in 10,000+ simulations
+- **Open:** Deploy anywhere, collect your own fees
+
+---
+
+**Ready to play?**
 ```bash
-python test_game.py
+cd demo && python game.py
 ```
 
-**What you get:**
-- Confirmation all code works
-- Example of each range type
-- ~1 second execution
-
----
-
-### 📊 Fairness Analysis
-
-**`analyze_fairness.py`** - Distribution analysis
-- Run 10,000+ simulated games
-- Show outcome distribution
-- Prove uniform fairness
-- Verify determinism
-
-**Run:**
-```bash
-python analyze_fairness.py
-```
-
-**What you get:**
-- Percentage distribution of outcomes
-- Deviation from expected
-- Fairness verification
-- Proof across all ranges
-
----
-
-### 📖 Documentation
-
-**`QUICKSTART.md`** - Get started in 30 seconds
-- 3 ways to run the demo
-- Quick reference
-- File guide
-- FAQ
-
-**`README.md`** - Complete guide
-- Full explanation of each phase
-- How the protocol works
-- Verification on-chain
-- Learning resources
-- Production extensions
-
-**`INDEX.md`** - Detailed reference
-- File descriptions
 - How to extend
 - Code examples
 - Troubleshooting
