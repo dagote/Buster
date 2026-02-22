@@ -1,0 +1,156 @@
+# Buster Protocol - Comprehensive .gitignore
+
+# ============================================================
+# ENVIRONMENT & SECRETS
+# ============================================================
+# Environment files (never commit private keys!)
+.env
+.env.local
+.env.*.local
+.env.production.local
+
+# Layer-specific environment files
+contract/.env
+contract/.env.local
+server/.env
+server/.env.local
+frontend/.env.local
+
+# Private keys and security
+*.key
+*.pem
+*.json.key
+keystore/
+private_keys/
+
+# ============================================================
+# DEPENDENCIES
+# ============================================================
+# Node.js
+node_modules/
+package-lock.json.bak
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.Python
+.venv/
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+*.egg-info/
+*.egg
+dist/
+build/
+
+# ============================================================
+# BUILD OUTPUTS (generated, should not commit)
+# ============================================================
+# Hardhat / Solidity
+contract/artifacts/
+contract/cache/
+contract/typechain-types/
+contract/coverage/
+
+# Frontend build
+frontend/build/
+frontend/dist/
+frontend/.next/
+frontend/.nuxt/
+
+# Python build
+*.so
+*.pyo
+
+# ============================================================
+# IDE & EDITOR
+# ============================================================
+.vscode/
+.vscode-insiders/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.iml
+.vscode/extensions.json
+.eslintcache
+.stylelintcache
+
+# ============================================================
+# OPERATING SYSTEM
+# ============================================================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ============================================================
+# LOGS & DEBUG
+# ============================================================
+*.log
+npm-debug.log*
+rpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.pnpm-debug.log
+
+# Node
+logs/
+*.log
+
+# ============================================================
+# TESTING & COVERAGE
+# ============================================================
+.coverage/
+.coverage.*
+htmlcov/
+.nyc_output/
+.pytest_cache/
+.mocha/
+*.lcov
+coverage/
+.nyc_output/
+
+# ============================================================
+# BLOCKCHAIN / CONTRACTS
+# ============================================================
+# Compiled contracts
+*.abi
+*.bin
+
+# Deployment artifacts
+deployments/
+!deployments/template.json
+
+# ============================================================
+# ARCHIVE / LEGACY
+# ============================================================
+# Legacy folder intentionally ignored (reference only, not maintained)
+# Uncomment the line below if you want to exclude legacy from git entirely:
+# legacy/
+
+# ============================================================
+# MISC
+# ============================================================
+.env.*.example
+.DS_Store
+.AppleDouble
+.LSOverride
+.venv.bak
+src/tsconfig.tsbuildinfo

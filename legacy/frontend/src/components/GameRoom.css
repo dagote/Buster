@@ -1,0 +1,509 @@
+/* GameRoom.css - Dark Crypto Exchange Theme */
+
+.game-room {
+  position: fixed;
+  left: 0;
+  top: 50px;
+  width: 100%;
+  height: calc(100vh - 95px);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Setup screen - Dark theme */
+.game-room.setup {
+  background: linear-gradient(135deg, #0f172a 0%, #1a202c 100%);
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+
+.setup-card {
+  background: #1a202c;
+  border-radius: 16px;
+  padding: 37px 25px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #2d3748;
+  position: relative;
+}
+
+/* Currency Toggle Button */
+.currency-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 16px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.currency-toggle:hover {
+  background: #2563eb;
+  transform: scale(1.05);
+}
+
+.currency-toggle:active {
+  transform: scale(0.95);
+}
+
+/* Balance Section */
+.balance-section {
+  margin-bottom: 30px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.balance-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #a0aec0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.balance-value {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  font-family: 'Monaco', 'Courier New', monospace;
+  letter-spacing: -1px;
+}
+
+.balance-unit {
+  font-size: 16px;
+  color: #a0aec0;
+  margin-left: 8px;
+  font-weight: 600;
+}
+
+/* Amount Display Section */
+.amount-display-section {
+  position: relative;
+  margin-bottom: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.amount-input {
+  width: 100%;
+  max-width: 280px;
+  padding: 18px 16px;
+  border: none;
+  background: transparent;
+  font-size: 48px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  font-family: 'Monaco', 'Courier New', monospace;
+  outline: none;
+  letter-spacing: -2px;
+}
+
+.amount-input::placeholder {
+  color: #4a5568;
+}
+
+.amount-input::-webkit-outer-spin-button,
+.amount-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.amount-input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.amount-unit {
+  position: absolute;
+  right: 16px;
+  top: 18px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #a0aec0;
+  pointer-events: none;
+}
+
+/* Constraints Section */
+.constraints-section {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 30px;
+  padding: 12px;
+  background: #0f172a;
+  border-radius: 12px;
+  width: 100%;
+}
+
+/* Bet Size Section */
+.bet-size-section {
+  margin-bottom: 30px;
+  padding: 12px;
+  background: #0f172a;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.bet-size-label {
+  font-size: 10px;
+  font-weight: 600;
+  color: #718096;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.bet-size-range {
+  font-size: 13px;
+  font-weight: 600;
+  color: #cbd5e0;
+  margin-bottom: 8px;
+}
+
+.minmax-buttons {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.minmax-btn {
+  flex: 1;
+  padding: 6px 12px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.minmax-btn:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.minmax-btn:active {
+  transform: translateY(0);
+}
+
+/* Error and Warning Messages */
+.error-message,
+.warning-message {
+  padding: 10px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 16px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.error-message {
+  background: #742a2a;
+  color: #fc8181;
+  border: 1px solid #c53030;
+}
+
+.error-icon {
+  margin-right: 8px;
+}
+
+.warning-message {
+  background: #75482f;
+  color: #fed7d7;
+  border: 1px solid #c05621;
+}
+
+.bet-input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-unit {
+  position: absolute;
+  right: auto;
+  left: 50%;
+  transform: translateX(75px);
+  top: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  pointer-events: none;
+}
+
+/* Create Button - Blue theme */
+.create-btn {
+  width: 100%;
+  max-width: 100%;
+  padding: 14px 24px;
+  background: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  align-self: center;
+}
+
+.create-btn.active:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px rgba(59, 130, 246, 0.4);
+}
+
+.create-btn.active:active {
+  transform: translateY(0);
+}
+
+.create-btn.disabled {
+  background: #4b5563;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bet-input:focus {
+  outline: none;
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-unit {
+  position: absolute;
+  right: auto;
+  left: 50%;
+  transform: translateX(75px);
+  top: 40px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #666;
+  pointer-events: none;
+}
+  color: #92400e;
+  padding: 10px 14px;
+  border-radius: 6px;
+  font-size: 13px;
+  margin-top: 12px;
+  border-left: 4px solid #fbbf24;
+}
+
+/* Waiting Screen */
+.game-room.waiting {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fb 100%);
+  justify-content: center;
+  align-items: center;
+}
+
+.waiting-card {
+  background: white;
+  border-radius: 12px;
+  padding: 60px 40px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 380px;
+  text-align: center;
+}
+
+.waiting-card h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.waiting-card p {
+  color: #666;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+/* Playing Screen */
+.game-room.playing {
+  background: white;
+  overflow-y: auto;
+}
+
+.game-header {
+  padding: 24px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: center;
+}
+
+.game-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #000;
+}
+
+.score-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  margin-top: 20px;
+}
+
+.player-score {
+  text-align: center;
+}
+
+.player-score .label {
+  font-size: 12px;
+  color: #666;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+}
+
+.player-score .score {
+  font-size: 32px;
+  font-weight: 700;
+  color: #667eea;
+}
+
+.score-vs {
+  font-size: 14px;
+  color: #999;
+  font-weight: 600;
+}
+
+.dice-container {
+  padding: 40px 24px;
+  display: flex;
+  justify-content: center;
+}
+
+.dice-game {
+  max-width: 300px;
+}
+
+.completed-screen {
+  padding: 40px 24px;
+  text-align: center;
+}
+
+.completed-screen h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #000;
+}
+
+.result-info {
+  background: #f0f4ff;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Share and Utilities */
+.share-link {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+}
+
+.share-link input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-family: monospace;
+  font-size: 12px;
+  background: #f9fafb;
+}
+
+.share-link button {
+  padding: 10px 16px;
+  background: #667eea;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.bet-info {
+  background: #f3f4f6;
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  text-align: left;
+}
+
+.bet-info p {
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 3px solid #f3f4f6;
+  border-top: 3px solid #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Responsive Mobile */
+@media (max-width: 768px) {
+  .game-room {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+  }
+
+  .setup-card,
+  .waiting-card {
+    max-width: 100%;
+    border-radius: 0;
+    padding: 40px 20px;
+  }
+
+  .balance-amount {
+    font-size: 32px;
+  }
+
+  .score-display {
+    gap: 20px;
+  }
+}

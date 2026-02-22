@@ -1,0 +1,87 @@
+# Bitcino Protocol
+
+A decentralized P2P betting protocol on Polygon. Open source, forkable, and deployable by anyone.
+
+---
+
+## Layer 1: Smart Contract (Polygon)
+
+The protocol core. The only component that defines the standard.
+
+- Accepts bets from two players
+- Holds funds in escrow
+- Receives winner decision from server
+- Pays out 99% to winner, 1% to deployer
+- All transactions auditable on chain
+- Open source — anyone can deploy their own instance and take their own 1%
+
+---
+
+## Layer 2: Server (Python)
+
+The game brain. Sits between the frontend and the contract.
+
+- Player matchmaking — pairs two players together
+- Game logic — dice, slots, match-3
+- Randomness generation and verification
+- Sends winner result to smart contract
+- REST API for frontend communication
+
+---
+
+## Layer 3: Frontend
+
+The player experience. Independent of the protocol — anyone can build their own.
+
+- MetaMask wallet connection
+- Game UI
+- Bet initiation and confirmation
+- Displays results and payouts
+
+---
+
+## Player Flow
+
+```
+Player connects wallet
+        ↓
+Places bet (funds go to contract)
+        ↓
+Server matches with opponent
+        ↓
+Game runs on server
+        ↓
+Server sends winner to contract
+        ↓
+Contract pays out automatically
+```
+
+---
+
+## Protocol Principles
+
+- You never hold user funds — the contract does
+- The contract is the source of truth
+- The server layer can be replaced by anyone
+- The frontend layer can be replaced by anyone
+- Only the contract is the protocol
+
+---
+
+## Stack
+
+| Layer | Technology |
+|-------|-----------|
+| Smart Contract | Solidity on Polygon |
+| Wallet | MetaMask |
+| Server | Python |
+| Frontend | TBD |
+
+---
+
+## Protocol Goals
+
+- Open standard anyone can fork and deploy in one session
+- Deployer takes 1% of every settled bet automatically
+- No custodial risk — funds held by contract, not operator
+- Chain agnostic across all EVM networks

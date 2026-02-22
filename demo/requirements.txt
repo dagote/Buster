@@ -1,0 +1,9 @@
+# No external dependencies required
+# This demo uses only Python standard library:
+# - hashlib (for commitment hashing)
+# - secrets (for cryptographically secure random numbers)
+# - enum (for game phases)
+
+# Optional: For production version with real Drand integration
+# - requests (for fetching from drandbeacon.io API)
+# - web3.py (for on-chain verification)
